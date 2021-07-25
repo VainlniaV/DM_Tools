@@ -1,0 +1,299 @@
+﻿<Window x:Class="DM_Tools.MonsterAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DM_Tools"
+        mc:Ignorable="d"
+        Title="MonsterAdd" Height="620" Width="1000" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- Nom, Type, Alignement & Taille -->
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <!-- Nom -->
+            <TextBox x:Name="nameMonsterText" Text="Nom" Margin="10,10,100,0" GotFocus="nameMonsterText_GotFocus" LostFocus="nameMonsterText_LostFocus" />
+            <!-- Type -->
+            <ComboBox x:Name="typeMonsterText" Margin="10,8,100,0">
+                <ComboBoxItem IsSelected="true">Aberration</ComboBoxItem>
+                <ComboBoxItem>Bête</ComboBoxItem>
+                <ComboBoxItem>Céleste</ComboBoxItem>
+                <ComboBoxItem>Créature artificielle</ComboBoxItem>
+                <ComboBoxItem>Créature monstrueuse</ComboBoxItem>
+                <ComboBoxItem>Dragon</ComboBoxItem>
+                <ComboBoxItem>Elémentaire</ComboBoxItem>
+                <ComboBoxItem>Fées</ComboBoxItem>
+                <ComboBoxItem>Fiélon</ComboBoxItem>
+                <ComboBoxItem>Géant</ComboBoxItem>
+                <ComboBoxItem>Humanoïde</ComboBoxItem>
+                <ComboBoxItem>Mort-Vivant</ComboBoxItem>
+                <ComboBoxItem>Plante</ComboBoxItem>
+                <ComboBoxItem>Vase</ComboBoxItem>
+            </ComboBox>
+            <!-- Alignement -->
+            <ComboBox x:Name="alignmentMonsterText" Margin="10,8,100,0">
+                <ComboBoxItem IsSelected="true">Loyal Bon</ComboBoxItem>
+                <ComboBoxItem>Neutre Bon</ComboBoxItem>
+                <ComboBoxItem>Chaotique Bon</ComboBoxItem>
+                <ComboBoxItem>Loyal Neutre</ComboBoxItem>
+                <ComboBoxItem>Neutre</ComboBoxItem>
+                <ComboBoxItem>Chaotique Neutre</ComboBoxItem>
+                <ComboBoxItem>Loyal Mauvais</ComboBoxItem>
+                <ComboBoxItem>Neutre Mauvais</ComboBoxItem>
+                <ComboBoxItem>Chaotique Mauvais</ComboBoxItem>
+            </ComboBox>
+            <!-- Taille -->
+            <ComboBox x:Name="heightMonsterText" Margin="10,8,100,0">
+                <ComboBoxItem IsSelected="True">Très petite</ComboBoxItem>
+                <ComboBoxItem>Petite</ComboBoxItem>
+                <ComboBoxItem>Moyenne</ComboBoxItem>
+                <ComboBoxItem>Grande</ComboBoxItem>
+                <ComboBoxItem>Très grande</ComboBoxItem>
+                <ComboBoxItem>Gigantesque</ComboBoxItem>
+            </ComboBox>
+            <!-- Classe d'armure -->
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="acMonsterText" Text="CA" Margin="10,5,0,0" Width="30" GotFocus="acMonsterText_GotFocus" LostFocus="acMonsterText_LostFocus"/>
+                <TextBox x:Name="acTypeMonsterText" Text="Type" Margin="10,5,0,0" Width="180" GotFocus="acTypeMonsterText_GotFocus" />
+            </StackPanel>
+            <!-- Point de vie -->
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="hpMonsterText" Text="PDV" Margin="10,5,0,0" Width="30" GotFocus="hpMonsterText_GotFocus" LostFocus="hpMonsterText_LostFocus"/>
+                <TextBox x:Name="hpFormulaMonsterText" Text="Formule" Margin="10,5,0,0" Width="180" Cursor="IBeam" GotFocus="hpFormulaMonsterText_GotFocus" LostFocus="hpFormulaMonsterText_LostFocus" />
+            </StackPanel>
+            
+        </StackPanel>
+        
+        <!-- Caractéristiques & sauvegarde -->
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.ColumnSpan="3" Content="CARACTERISTIQUES" HorizontalAlignment="Center" FontSize="20"/>
+
+            <!-- Force -->
+            <Grid Grid.Row="1" Grid.Column="0" Margin="0,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="FORCE" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Center"/>
+                <TextBox x:Name="strengthMonsterText"  TextAlignment="Center" Text="10" Grid.Row="1" Grid.Column="0" Margin="10,5" BorderBrush="Black"/>
+                <CheckBox x:Name="strengthMonsterBool" Grid.Row="1" Grid.Column="1" Margin="10,5" />
+            </Grid>
+
+            <!-- Dextérité -->
+            <Grid Grid.Row="1" Grid.Column="1" Margin="0,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="DEXTERITE" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Center"/>
+                <TextBox x:Name="dexterityMonsterText" TextAlignment="Center" Text="10" Grid.Row="1" Grid.Column="0" Margin="10,5" BorderBrush="Black"/>
+                <CheckBox x:Name="dexterityMonsterBool" Grid.Row="1" Grid.Column="1" Margin="10,5" />
+            </Grid>
+
+            <!-- Constitution -->
+            <Grid Grid.Row="1" Grid.Column="3" Margin="0,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="CONSTITUTION" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Center"/>
+                <TextBox x:Name="constitutionMonsterText" TextAlignment="Center" Text="10" Grid.Row="1" Grid.Column="0" Margin="10,5" BorderBrush="Black"/>
+                <CheckBox x:Name="constitutionMonsterBool" Grid.Row="1" Grid.Column="1" Margin="10,5" />
+            </Grid>
+
+            <!-- INTELLIGENCE -->
+            <Grid Grid.Row="2" Grid.Column="0" Margin="0,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="INTELLIGENCE" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Center"/>
+                <TextBox x:Name="intelligenceMonsterText" TextAlignment="Center" Text="10" Grid.Row="1" Grid.Column="0" Margin="10,5" BorderBrush="Black"/>
+                <CheckBox x:Name="intelligenceMonsterBool" Grid.Row="1" Grid.Column="1" Margin="10,5" />
+            </Grid>
+
+            <!-- Sagesse -->
+            <Grid Grid.Row="2" Grid.Column="1" Margin="0,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="SAGESSE" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Center"/>
+                <TextBox x:Name="wisdomMonsterText" TextAlignment="Center" Text="10" Grid.Row="1" Grid.Column="0" Margin="10,5" BorderBrush="Black"/>
+                <CheckBox x:Name="wisdomMonsterBool" Grid.Row="1" Grid.Column="1" Margin="10,5" />
+            </Grid>
+
+            <!-- Charisme -->
+            <Grid Grid.Row="2" Grid.Column="2" Margin="0,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="CHARISME" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Center"/>
+                <TextBox x:Name="charismaMonsterText" TextAlignment="Center" Text="10" Grid.Row="1" Grid.Column="0" Margin="10,5" BorderBrush="Black"/>
+                <CheckBox x:Name="charismaMonsterBool" Grid.Row="1" Grid.Column="1" Margin="10,5" />
+            </Grid>
+        </Grid>
+        <!-- Vitesse & Langage -->
+        <Grid Grid.Row="0" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <!-- Vitesses -->
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Content="Vitesse" HorizontalAlignment="Center" FontSize="20"/>
+                <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">
+                    <Label Content="Marche"/>
+                    <TextBox x:Name="walkSpeedText" Text="9" Width="30" TextAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center">
+                    <Label Content="Vol"/>
+                    <TextBox x:Name="flySpeedText" Text="0" Width="30" TextAlignment="Center" />
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center">
+                    <Label Content="Nage"/>
+                    <TextBox x:Name="swimSpeedText" Text="0" Width="30" TextAlignment="Center" Cursor="IBeam" />
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center">
+                    <Label Content="Escalade"/>
+                    <TextBox x:Name="climbSpeedText" Text="0" Width="30" TextAlignment="Center"/>
+                </StackPanel>
+            </Grid>
+            <!-- Langue -->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <CheckBox x:Name="langCommunMonstre" Content="COMMUN" Margin="5,5,5,0" FontSize="10"/>
+                    <CheckBox x:Name="langElfeMonstre" Content="ELFE" Margin="5,0,5,0" FontSize="10"/>
+                    <CheckBox x:Name="langGeantMonstre" Content="GEANT" Margin="5,0,5,0" FontSize="10"/>
+                    <CheckBox x:Name="langGnomeMonstre" Content="GNOME" Margin="5,0,5,0" FontSize="10"/>
+                    <CheckBox x:Name="langGobelinMonstre" Content="GOBELIN" Margin="5,0,5,0" FontSize="10"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <CheckBox x:Name="langHalfelinMonstre" Content="HALFELIN" Margin="5,5,5,0" FontSize="10"/>
+                    <CheckBox x:Name="langNainMonstre" Content="NAIN" Margin="5,0,5,0" FontSize="10"/>
+                    <CheckBox x:Name="langOrcMonstre" Content="ORC" Margin="5,0,5,0" FontSize="10"/>
+                    <CheckBox x:Name="langAbyssalMonstre" Content="ABYSSAL" Margin="5,0,5,0" FontSize="10"/>
+                    <CheckBox x:Name="langCelesteMonstre" Content="CELESTE" Margin="5,0,5,0" FontSize="10"/>
+                </StackPanel>
+                <StackPanel Grid.Column="2">
+                    <CheckBox x:Name="langDraconiqueMonstre" Content="DRACONIQUE" Margin="5,5,5,0" FontSize="10"/>
+                    <CheckBox x:Name="langInfernalMonstre" Content="INFERNAL" Margin="5,0,5,0" FontSize="10"/>
+                    <CheckBox x:Name="langPrimordialMonstre" Content="PRIMORDIAL" Margin="5,0,5,0" FontSize="10"/>
+                    <CheckBox x:Name="langProfondMonstre" Content="PROFOND" Margin="5,0,5,0" FontSize="10"/>
+                    <CheckBox x:Name="langSylvainMonstre" Content="SYLVAIN" Margin="5,0,5,0" FontSize="10"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <!-- Compétences -->
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="0" Grid.Column="0">
+                <CheckBox x:Name="compAcrobatieMonstre" Content="ACROBATIES" Margin="5,10,5,5" FontSize="10"/>
+                <CheckBox x:Name="compArcaneMonstre" Content="ARCANES" Margin="5" FontSize="10"/>
+                <CheckBox x:Name="compAthletismeMonstre" Content="ATLETISMES" Margin="5" FontSize="10"/>
+                <CheckBox x:Name="compDiscretionMonstre" Content="DISCRETION" Margin="5" FontSize="10"/>
+                <CheckBox x:Name="compDressageMonstre" Content="DRESSAGE" Margin="5" FontSize="10"/>
+                <CheckBox x:Name="compEscamotageMonstre" Content="ESCAMOTAGE" Margin="5" FontSize="10"/>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="1">
+                <CheckBox x:Name="compHistoireMonstre" Content="HISTOIRE" Margin="5,10,5,5" FontSize="10"/>
+                <CheckBox x:Name="compIntimidationMonstre" Content="INTIMIDATION" Margin="5" FontSize="10"/>
+                <CheckBox x:Name="compInvestigationMonstre" Content="INVESTIGATION" Margin="5" FontSize="10"/>
+                <CheckBox x:Name="compMedecineMonstre" Content="MEDECINE" Margin="5" FontSize="10"/>
+                <CheckBox x:Name="compNatureMonstre" Content="NATURE" Margin="5" FontSize="10"/>
+                <CheckBox x:Name="compPerceptionMonstre" Content="PERCEPTION" Margin="5" FontSize="10"/>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="2">
+                <CheckBox x:Name="compPerspicaciteMonstre" Content="PERSPICACITE" Margin="5,10,5,5" FontSize="10"/>
+                <CheckBox x:Name="compPersuasionMonstre" Content="PERSUASION" Margin="5" FontSize="10"/>
+                <CheckBox x:Name="compReligionMonstre" Content="RELIGION" Margin="5" FontSize="10"/>
+                <CheckBox x:Name="compRepresentationMonstre" Content="REPRESENTATION" Margin="5" FontSize="10"/>
+                <CheckBox x:Name="compSurvieMonstre" Content="SURVIE" Margin="5" FontSize="10"/>
+                <CheckBox x:Name="compTromperieMonstre" Content="TROMPERIE" Margin="5" FontSize="10"/>
+            </StackPanel>
+        </Grid>
+        <!-- Vulnérabilités, Résistances, Immunités & Sens -->
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <!-- Vulnérabilités -->
+            <TextBox x:Name="vulnMonstre" Text="Vulnérabilités aux dégâts" Margin="10,5,10,0" GotFocus="vulnMonstre_GotFocus"/>
+
+            <!-- Résistances -->
+            <TextBox x:Name="resMonstre" Text="Résistances aux dégâts" Margin="10,5,10,0" GotFocus="resMonstre_GotFocus"/>
+
+            <!-- Immunités aux dégâts -->
+            <TextBox x:Name="immuDmgMonstre" Text="Immunités aux dégâts" Margin="10,5,10,0" GotFocus="immuDmgMonstre_GotFocus"/>
+
+            <!-- Immunités aux conditions -->
+            <TextBox x:Name="immuConMonstre" Text="Immunités aux conditions" Margin="10,5,10,0" GotFocus="immuConMonstre_GotFocus" Cursor="IBeam"/>
+
+            <!-- Sens -->
+            <TextBox x:Name="sensMonstre" Text="Sens" Margin="10,5,10,0" GotFocus="sensMonstre_GotFocus"/>
+
+        </StackPanel>
+        <!-- Bouton -->
+        <Button Grid.Column="2" Grid.Row="2" Content="Ajouter" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="129" Click="AddButtonClick" Margin="0,0,10,10"/>
+    </Grid>
+</Window>

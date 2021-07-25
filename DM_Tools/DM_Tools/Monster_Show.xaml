@@ -1,0 +1,74 @@
+﻿<Window x:Class="DM_Tools.Monster_Show"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DM_Tools"
+        mc:Ignorable="d"
+        x:Name="windowMonsterShow"
+        Title="Monster_Show" Height="600" Width="350" WindowStyle="ToolWindow" ResizeMode="NoResize">
+    <StackPanel>
+        <!-- Nom -->
+        <Label x:Name="monsterNameText" Content="Nom" Foreground="#922610" FontSize="15"/>
+        <!-- Info -->
+        <Label x:Name="monsterInfoText" Content="Infos" FontSize="10"/>
+        <Separator Background="#922610"/>
+        <!-- Armure -->
+        <Label x:Name="acMonsterText" Content="Classe Armure" Foreground="#922610" FontSize="12"/>
+        <!-- Point de vie -->
+        <Label x:Name="hpMonsterText" Content="Point de vie" Foreground="#922610" FontSize="12"/>
+        <!-- Vitesse -->
+        <Label x:Name="speedMonsterText" Content="Vitesse" Foreground="#922610" FontSize="12"/>
+        <Separator Background="#922610"/>
+        <!-- Caractéristiques -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+            </Grid.RowDefinitions>
+            <!-- Force -->
+            <Label Grid.Row="0" Grid.Column="0" Content="FOR" HorizontalAlignment="Center" FontSize="12"  Foreground="#922610" FontWeight="Bold"/>
+            <Label x:Name="strMonsterText" Grid.Row="1" Grid.Column="0" Content="10" HorizontalAlignment="Center" />
+            <!-- Dexterité -->
+            <Label Grid.Row="0" Grid.Column="1" Content="DEX" HorizontalAlignment="Center" FontSize="12" Foreground="#922610" FontWeight="Bold"/>
+            <Label x:Name="dexMonsterText" Grid.Row="1" Grid.Column="1" Content="10" HorizontalAlignment="Center" />
+            <!-- Contitution -->
+            <Label Grid.Row="0" Grid.Column="2" Content="CON" HorizontalAlignment="Center" FontSize="12" Foreground="#922610" FontWeight="Bold"/>
+            <Label x:Name="conMonsterText" Grid.Row="1" Grid.Column="2" Content="10" HorizontalAlignment="Center" />
+            <!-- Intelligence -->
+            <Label Grid.Row="0" Grid.Column="3" Content="INT" HorizontalAlignment="Center" FontSize="12" Foreground="#922610" FontWeight="Bold"/>
+            <Label x:Name="intMonsterText" Grid.Row="1" Grid.Column="3" Content="10" HorizontalAlignment="Center" />
+            <!-- Sagesse -->
+            <Label Grid.Row="0" Grid.Column="4" Content="SAG" HorizontalAlignment="Center" FontSize="12" Foreground="#922610" FontWeight="Bold"/>
+            <Label x:Name="wisMonsterText" Grid.Row="1" Grid.Column="4" Content="10" HorizontalAlignment="Center" />
+            <!-- Charisme -->
+            <Label Grid.Row="0" Grid.Column="5" Content="CHA" HorizontalAlignment="Center" FontSize="12" Foreground="#922610" FontWeight="Bold"/>
+            <Label x:Name="chaMonsterText" Grid.Row="1" Grid.Column="5" Content="10" HorizontalAlignment="Center" />
+        </Grid>
+        <Separator Background="#922610"/>
+        <!-- Jets de sauvegarde -->
+        <Label x:Name="saveMonsterText" Content="Jets de sauvegarde" Foreground="#922610" FontSize="10"/>
+        <!-- Compétences -->
+        <Label x:Name="compMonsterText" Content="Compétence" Foreground="#922610" FontSize="10"/>
+        <!-- Vulnérabilités -->
+        <Label x:Name="vulnMonsterText" Content="Vulnérabilités aux dégâts" Foreground="#922610" FontSize="10"/>
+        <!-- Résistances -->
+        <Label x:Name="resMonsterText" Content="Résistances aux dégâts" Foreground="#922610" FontSize="10"/>
+        <!-- Immunités aux dégâts -->
+        <Label x:Name="immuDmgMonsterText" Content="Immunités aux dégâts" Foreground="#922610" FontSize="10"/>
+        <!-- Immunités aux conditions -->
+        <Label x:Name="immuConMonsterText" Content="Immunités aux conditions" Foreground="#922610" FontSize="10"/>
+        <!-- Sens -->
+        <Label x:Name="sensMonsterText" Content="Sens" Foreground="#922610" FontSize="10"/>
+        <!-- Langue -->
+        <Label x:Name="speekMonsterText" Content="Langues" Foreground="#922610" FontSize="10"/>
+    </StackPanel>
+</Window>
