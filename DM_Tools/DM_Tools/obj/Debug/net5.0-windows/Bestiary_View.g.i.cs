@@ -61,7 +61,7 @@ namespace DM_Tools {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/DM_Tools;component/bestiary_view.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/DM_Tools;V1.0.0.0;component/bestiary_view.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Bestiary_View.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
