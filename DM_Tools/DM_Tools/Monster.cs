@@ -26,6 +26,8 @@ namespace DM_Tools
         public string immuDmgMonstre { get; private set; }
         public string immuConMonstre { get; private set; }
         public string sensMonstre { get; private set; }
+        public bool spellcasterMonstre { get; private set; }
+        public int spellcasterLevelMonstre { get; private set; }
 
         public Monster(string nomMonstre,
                        string tailleMonstre,
@@ -44,7 +46,9 @@ namespace DM_Tools
                        string resMonstre,
                        string immuDmgMonstre,
                        string immuConMonstre,
-                       string sensMonstre
+                       string sensMonstre,
+                       bool spellcasterMonstre,
+                       int spellcasterLevelMonstre
         )
         {
             this.nomMonstre = nomMonstre;
@@ -65,6 +69,8 @@ namespace DM_Tools
             this.immuDmgMonstre = immuDmgMonstre;
             this.immuConMonstre = immuConMonstre;
             this.sensMonstre = sensMonstre;
+            this.spellcasterMonstre = spellcasterMonstre;
+            this.spellcasterLevelMonstre = spellcasterLevelMonstre;
         }
     }
 }

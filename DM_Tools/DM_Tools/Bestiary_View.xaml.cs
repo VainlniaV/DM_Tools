@@ -65,12 +65,22 @@ namespace DM_Tools
 
         private void Button_Show_Click(object sender, RoutedEventArgs e)
         {
+            ShowSelectedMonster();
+        }
+
+        private void ListViewTest_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            ShowSelectedMonster();
+        }
+
+        private void ShowSelectedMonster()
+        {
             Monster item = ListViewTest.SelectedItem as Monster;
             if (item != null)
             {
                 Monster_Show ms = new Monster_Show(item);
                 ms.Show();
-            }       
+            }
         }
     }
 }

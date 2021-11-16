@@ -29,5 +29,11 @@ namespace DM_Tools
         {
             MainFrame.Content = new Bestiary_View();
         }
+
+        private void Button_TurnOrder_Click(object sender, RoutedEventArgs e)
+        {
+            TurnOrder to = new TurnOrder();
+            to.Show();
+        }
     }
 }

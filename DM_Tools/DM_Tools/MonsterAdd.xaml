@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DM_Tools"
         mc:Ignorable="d"
-        Title="MonsterAdd" Height="620" Width="1000" ResizeMode="NoResize">
+        Title="MonsterAdd" Height="800" Width="1000" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -19,61 +19,68 @@
         </Grid.RowDefinitions>
 
         <!-- Nom, Type, Alignement & Taille -->
-        <StackPanel Grid.Row="0" Grid.Column="0">
-            <!-- Nom -->
-            <TextBox x:Name="nameMonsterText" Text="Nom" Margin="10,10,100,0" GotFocus="nameMonsterText_GotFocus" LostFocus="nameMonsterText_LostFocus" />
-            <!-- Type -->
-            <ComboBox x:Name="typeMonsterText" Margin="10,8,100,0">
-                <ComboBoxItem IsSelected="true">Aberration</ComboBoxItem>
-                <ComboBoxItem>Bête</ComboBoxItem>
-                <ComboBoxItem>Céleste</ComboBoxItem>
-                <ComboBoxItem>Créature artificielle</ComboBoxItem>
-                <ComboBoxItem>Créature monstrueuse</ComboBoxItem>
-                <ComboBoxItem>Dragon</ComboBoxItem>
-                <ComboBoxItem>Elémentaire</ComboBoxItem>
-                <ComboBoxItem>Fées</ComboBoxItem>
-                <ComboBoxItem>Fiélon</ComboBoxItem>
-                <ComboBoxItem>Géant</ComboBoxItem>
-                <ComboBoxItem>Humanoïde</ComboBoxItem>
-                <ComboBoxItem>Mort-Vivant</ComboBoxItem>
-                <ComboBoxItem>Plante</ComboBoxItem>
-                <ComboBoxItem>Vase</ComboBoxItem>
-            </ComboBox>
-            <!-- Alignement -->
-            <ComboBox x:Name="alignmentMonsterText" Margin="10,8,100,0">
-                <ComboBoxItem IsSelected="true">Loyal Bon</ComboBoxItem>
-                <ComboBoxItem>Neutre Bon</ComboBoxItem>
-                <ComboBoxItem>Chaotique Bon</ComboBoxItem>
-                <ComboBoxItem>Loyal Neutre</ComboBoxItem>
-                <ComboBoxItem>Neutre</ComboBoxItem>
-                <ComboBoxItem>Chaotique Neutre</ComboBoxItem>
-                <ComboBoxItem>Loyal Mauvais</ComboBoxItem>
-                <ComboBoxItem>Neutre Mauvais</ComboBoxItem>
-                <ComboBoxItem>Chaotique Mauvais</ComboBoxItem>
-            </ComboBox>
-            <!-- Taille -->
-            <ComboBox x:Name="heightMonsterText" Margin="10,8,100,0">
-                <ComboBoxItem IsSelected="True">Très petite</ComboBoxItem>
-                <ComboBoxItem>Petite</ComboBoxItem>
-                <ComboBoxItem>Moyenne</ComboBoxItem>
-                <ComboBoxItem>Grande</ComboBoxItem>
-                <ComboBoxItem>Très grande</ComboBoxItem>
-                <ComboBoxItem>Gigantesque</ComboBoxItem>
-            </ComboBox>
-            <!-- Classe d'armure -->
-            <StackPanel Orientation="Horizontal">
-                <TextBox x:Name="acMonsterText" Text="CA" Margin="10,5,0,0" Width="30" GotFocus="acMonsterText_GotFocus" LostFocus="acMonsterText_LostFocus"/>
-                <TextBox x:Name="acTypeMonsterText" Text="Type" Margin="10,5,0,0" Width="180" GotFocus="acTypeMonsterText_GotFocus" />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.ColumnSpan="3" Content="GENERAL" HorizontalAlignment="Center" FontSize="20"/>
+            <StackPanel Grid.Row="1" Grid.Column="0">
+                <!-- Nom -->
+                <TextBox x:Name="nameMonsterText" Text="Nom" Margin="10,10,100,0" GotFocus="nameMonsterText_GotFocus" LostFocus="nameMonsterText_LostFocus" />
+                <!-- Type -->
+                <ComboBox x:Name="typeMonsterText" Margin="10,8,100,0">
+                    <ComboBoxItem IsSelected="true">Aberration</ComboBoxItem>
+                    <ComboBoxItem>Bête</ComboBoxItem>
+                    <ComboBoxItem>Céleste</ComboBoxItem>
+                    <ComboBoxItem>Créature artificielle</ComboBoxItem>
+                    <ComboBoxItem>Créature monstrueuse</ComboBoxItem>
+                    <ComboBoxItem>Dragon</ComboBoxItem>
+                    <ComboBoxItem>Elémentaire</ComboBoxItem>
+                    <ComboBoxItem>Fées</ComboBoxItem>
+                    <ComboBoxItem>Fiélon</ComboBoxItem>
+                    <ComboBoxItem>Géant</ComboBoxItem>
+                    <ComboBoxItem>Humanoïde</ComboBoxItem>
+                    <ComboBoxItem>Mort-Vivant</ComboBoxItem>
+                    <ComboBoxItem>Plante</ComboBoxItem>
+                    <ComboBoxItem>Vase</ComboBoxItem>
+                </ComboBox>
+                <!-- Alignement -->
+                <ComboBox x:Name="alignmentMonsterText" Margin="10,8,100,0">
+                    <ComboBoxItem IsSelected="true">Sans Alignement</ComboBoxItem>
+                    <ComboBoxItem >Loyal Bon</ComboBoxItem>
+                    <ComboBoxItem>Neutre Bon</ComboBoxItem>
+                    <ComboBoxItem>Chaotique Bon</ComboBoxItem>
+                    <ComboBoxItem>Loyal Neutre</ComboBoxItem>
+                    <ComboBoxItem>Neutre</ComboBoxItem>
+                    <ComboBoxItem>Chaotique Neutre</ComboBoxItem>
+                    <ComboBoxItem>Loyal Mauvais</ComboBoxItem>
+                    <ComboBoxItem>Neutre Mauvais</ComboBoxItem>
+                    <ComboBoxItem>Chaotique Mauvais</ComboBoxItem>
+                </ComboBox>
+                <!-- Taille -->
+                <ComboBox x:Name="heightMonsterText" Margin="10,8,100,0">
+                    <ComboBoxItem IsSelected="True">Très petite</ComboBoxItem>
+                    <ComboBoxItem>Petite</ComboBoxItem>
+                    <ComboBoxItem>Moyenne</ComboBoxItem>
+                    <ComboBoxItem>Grande</ComboBoxItem>
+                    <ComboBoxItem>Très grande</ComboBoxItem>
+                    <ComboBoxItem>Gigantesque</ComboBoxItem>
+                </ComboBox>
+                <!-- Classe d'armure -->
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="acMonsterText" Text="CA" Margin="10,5,0,0" Width="30" GotFocus="acMonsterText_GotFocus" LostFocus="acMonsterText_LostFocus"/>
+                    <TextBox x:Name="acTypeMonsterText" Text="Type" Margin="10,5,0,0" Width="180" GotFocus="acTypeMonsterText_GotFocus" />
+                </StackPanel>
+                <!-- Point de vie -->
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="hpMonsterText" Text="PDV" Margin="10,5,0,0" Width="30" GotFocus="hpMonsterText_GotFocus" LostFocus="hpMonsterText_LostFocus"/>
+                    <TextBox x:Name="hpFormulaMonsterText" Text="Formule" Margin="10,5,0,0" Width="180" Cursor="IBeam" GotFocus="hpFormulaMonsterText_GotFocus" LostFocus="hpFormulaMonsterText_LostFocus" />
+                </StackPanel>
+
             </StackPanel>
-            <!-- Point de vie -->
-            <StackPanel Orientation="Horizontal">
-                <TextBox x:Name="hpMonsterText" Text="PDV" Margin="10,5,0,0" Width="30" GotFocus="hpMonsterText_GotFocus" LostFocus="hpMonsterText_LostFocus"/>
-                <TextBox x:Name="hpFormulaMonsterText" Text="Formule" Margin="10,5,0,0" Width="180" Cursor="IBeam" GotFocus="hpFormulaMonsterText_GotFocus" LostFocus="hpFormulaMonsterText_LostFocus" />
-            </StackPanel>
-            
-        </StackPanel>
-        
-        <!-- Caractéristiques & sauvegarde -->
+        </Grid>
+            <!-- Caractéristiques & sauvegarde -->
         <Grid Grid.Row="0" Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -82,8 +89,8 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
             </Grid.RowDefinitions>
             <Label Grid.Row="0" Grid.ColumnSpan="3" Content="CARACTERISTIQUES" HorizontalAlignment="Center" FontSize="20"/>
 
@@ -94,8 +101,8 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="35"/>
                 </Grid.RowDefinitions>
                 <Label Content="FORCE" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Center"/>
                 <TextBox x:Name="strengthMonsterText"  TextAlignment="Center" Text="10" Grid.Row="1" Grid.Column="0" Margin="10,5" BorderBrush="Black"/>
@@ -109,8 +116,8 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="35"/>
                 </Grid.RowDefinitions>
                 <Label Content="DEXTERITE" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Center"/>
                 <TextBox x:Name="dexterityMonsterText" TextAlignment="Center" Text="10" Grid.Row="1" Grid.Column="0" Margin="10,5" BorderBrush="Black"/>
@@ -124,8 +131,8 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="35"/>
                 </Grid.RowDefinitions>
                 <Label Content="CONSTITUTION" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Center"/>
                 <TextBox x:Name="constitutionMonsterText" TextAlignment="Center" Text="10" Grid.Row="1" Grid.Column="0" Margin="10,5" BorderBrush="Black"/>
@@ -139,8 +146,8 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="35"/>
                 </Grid.RowDefinitions>
                 <Label Content="INTELLIGENCE" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Center"/>
                 <TextBox x:Name="intelligenceMonsterText" TextAlignment="Center" Text="10" Grid.Row="1" Grid.Column="0" Margin="10,5" BorderBrush="Black"/>
@@ -154,8 +161,8 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="35"/>
                 </Grid.RowDefinitions>
                 <Label Content="SAGESSE" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Center"/>
                 <TextBox x:Name="wisdomMonsterText" TextAlignment="Center" Text="10" Grid.Row="1" Grid.Column="0" Margin="10,5" BorderBrush="Black"/>
@@ -169,8 +176,8 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="35"/>
                 </Grid.RowDefinitions>
                 <Label Content="CHARISME" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Center"/>
                 <TextBox x:Name="charismaMonsterText" TextAlignment="Center" Text="10" Grid.Row="1" Grid.Column="0" Margin="10,5" BorderBrush="Black"/>
@@ -180,7 +187,7 @@
         <!-- Vitesse & Langage -->
         <Grid Grid.Row="0" Grid.Column="2">
             <Grid.RowDefinitions>
-                <RowDefinition/>
+                <RowDefinition Height="110"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <!-- Vitesses -->
@@ -195,10 +202,10 @@
                     <RowDefinition Height="40"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Content="Vitesse" HorizontalAlignment="Center" FontSize="20"/>
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Content="VITESSE" HorizontalAlignment="Center" FontSize="20"/>
                 <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">
                     <Label Content="Marche"/>
-                    <TextBox x:Name="walkSpeedText" Text="9" Width="30" TextAlignment="Center"/>
+                    <TextBox x:Name="walkSpeedText" Text="9" Width="30" TextAlignment="Center" Cursor="IBeam"/>
                 </StackPanel>
                 <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center">
                     <Label Content="Vol"/>
@@ -220,21 +227,26 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <StackPanel Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.ColumnSpan="3" Content="LANGAGE" HorizontalAlignment="Center" FontSize="20"/>
+                <StackPanel Grid.Column="0" Grid.Row="1">
                     <CheckBox x:Name="langCommunMonstre" Content="COMMUN" Margin="5,5,5,0" FontSize="10"/>
                     <CheckBox x:Name="langElfeMonstre" Content="ELFE" Margin="5,0,5,0" FontSize="10"/>
                     <CheckBox x:Name="langGeantMonstre" Content="GEANT" Margin="5,0,5,0" FontSize="10"/>
                     <CheckBox x:Name="langGnomeMonstre" Content="GNOME" Margin="5,0,5,0" FontSize="10"/>
                     <CheckBox x:Name="langGobelinMonstre" Content="GOBELIN" Margin="5,0,5,0" FontSize="10"/>
                 </StackPanel>
-                <StackPanel Grid.Column="1">
+                <StackPanel Grid.Column="1" Grid.Row="1">
                     <CheckBox x:Name="langHalfelinMonstre" Content="HALFELIN" Margin="5,5,5,0" FontSize="10"/>
                     <CheckBox x:Name="langNainMonstre" Content="NAIN" Margin="5,0,5,0" FontSize="10"/>
                     <CheckBox x:Name="langOrcMonstre" Content="ORC" Margin="5,0,5,0" FontSize="10"/>
                     <CheckBox x:Name="langAbyssalMonstre" Content="ABYSSAL" Margin="5,0,5,0" FontSize="10"/>
                     <CheckBox x:Name="langCelesteMonstre" Content="CELESTE" Margin="5,0,5,0" FontSize="10"/>
                 </StackPanel>
-                <StackPanel Grid.Column="2">
+                <StackPanel Grid.Column="2" Grid.Row="1">
                     <CheckBox x:Name="langDraconiqueMonstre" Content="DRACONIQUE" Margin="5,5,5,0" FontSize="10"/>
                     <CheckBox x:Name="langInfernalMonstre" Content="INFERNAL" Margin="5,0,5,0" FontSize="10"/>
                     <CheckBox x:Name="langPrimordialMonstre" Content="PRIMORDIAL" Margin="5,0,5,0" FontSize="10"/>
@@ -245,12 +257,17 @@
         </Grid>
         <!-- Compétences -->
         <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Row="0" Grid.Column="0">
+            <Label Grid.Row="0" Grid.ColumnSpan="3" Content="COMPETENCES" HorizontalAlignment="Center" FontSize="20"/>
+            <StackPanel Grid.Row="1" Grid.Column="0">
                 <CheckBox x:Name="compAcrobatieMonstre" Content="ACROBATIES" Margin="5,10,5,5" FontSize="10"/>
                 <CheckBox x:Name="compArcaneMonstre" Content="ARCANES" Margin="5" FontSize="10"/>
                 <CheckBox x:Name="compAthletismeMonstre" Content="ATLETISMES" Margin="5" FontSize="10"/>
@@ -258,7 +275,7 @@
                 <CheckBox x:Name="compDressageMonstre" Content="DRESSAGE" Margin="5" FontSize="10"/>
                 <CheckBox x:Name="compEscamotageMonstre" Content="ESCAMOTAGE" Margin="5" FontSize="10"/>
             </StackPanel>
-            <StackPanel Grid.Row="0" Grid.Column="1">
+            <StackPanel Grid.Row="1" Grid.Column="1">
                 <CheckBox x:Name="compHistoireMonstre" Content="HISTOIRE" Margin="5,10,5,5" FontSize="10"/>
                 <CheckBox x:Name="compIntimidationMonstre" Content="INTIMIDATION" Margin="5" FontSize="10"/>
                 <CheckBox x:Name="compInvestigationMonstre" Content="INVESTIGATION" Margin="5" FontSize="10"/>
@@ -266,7 +283,7 @@
                 <CheckBox x:Name="compNatureMonstre" Content="NATURE" Margin="5" FontSize="10"/>
                 <CheckBox x:Name="compPerceptionMonstre" Content="PERCEPTION" Margin="5" FontSize="10"/>
             </StackPanel>
-            <StackPanel Grid.Row="0" Grid.Column="2">
+            <StackPanel Grid.Row="1" Grid.Column="2">
                 <CheckBox x:Name="compPerspicaciteMonstre" Content="PERSPICACITE" Margin="5,10,5,5" FontSize="10"/>
                 <CheckBox x:Name="compPersuasionMonstre" Content="PERSUASION" Margin="5" FontSize="10"/>
                 <CheckBox x:Name="compReligionMonstre" Content="RELIGION" Margin="5" FontSize="10"/>
@@ -276,23 +293,289 @@
             </StackPanel>
         </Grid>
         <!-- Vulnérabilités, Résistances, Immunités & Sens -->
-        <StackPanel Grid.Row="1" Grid.Column="1">
-            <!-- Vulnérabilités -->
-            <TextBox x:Name="vulnMonstre" Text="Vulnérabilités aux dégâts" Margin="10,5,10,0" GotFocus="vulnMonstre_GotFocus"/>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.ColumnSpan="3" Content="TRAITS" HorizontalAlignment="Center" FontSize="20"/>
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <!-- Vulnérabilités -->
+                <TextBox x:Name="vulnMonstre" Text="Vulnérabilités aux dégâts" Margin="10,5,10,0" GotFocus="vulnMonstre_GotFocus"/>
 
-            <!-- Résistances -->
-            <TextBox x:Name="resMonstre" Text="Résistances aux dégâts" Margin="10,5,10,0" GotFocus="resMonstre_GotFocus"/>
+                <!-- Résistances -->
+                <TextBox x:Name="resMonstre" Text="Résistances aux dégâts" Margin="10,5,10,0" GotFocus="resMonstre_GotFocus"/>
 
-            <!-- Immunités aux dégâts -->
-            <TextBox x:Name="immuDmgMonstre" Text="Immunités aux dégâts" Margin="10,5,10,0" GotFocus="immuDmgMonstre_GotFocus"/>
+                <!-- Immunités aux dégâts -->
+                <TextBox x:Name="immuDmgMonstre" Text="Immunités aux dégâts" Margin="10,5,10,0" GotFocus="immuDmgMonstre_GotFocus"/>
 
-            <!-- Immunités aux conditions -->
-            <TextBox x:Name="immuConMonstre" Text="Immunités aux conditions" Margin="10,5,10,0" GotFocus="immuConMonstre_GotFocus" Cursor="IBeam"/>
+                <!-- Immunités aux conditions -->
+                <TextBox x:Name="immuConMonstre" Text="Immunités aux conditions" Margin="10,5,10,0" GotFocus="immuConMonstre_GotFocus" Cursor="IBeam"/>
 
-            <!-- Sens -->
-            <TextBox x:Name="sensMonstre" Text="Sens" Margin="10,5,10,0" GotFocus="sensMonstre_GotFocus"/>
+                <!-- Sens -->
+                <TextBox x:Name="sensMonstre" Text="Sens" Margin="10,5,10,0" GotFocus="sensMonstre_GotFocus"/>
 
-        </StackPanel>
+            </StackPanel>
+        </Grid>
+        <!-- Lanceur de sort -->
+        <Grid Grid.Row="1" Grid.Column="2" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.ColumnSpan="3" Content="APTITUDES" HorizontalAlignment="Center" FontSize="20"/>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <!-- Si Lanceur de Sort -->
+                <CheckBox x:Name="cbIsSpellMonster" Grid.Column="0" Content="Lanceur de Sort" VerticalAlignment="Top" Margin="5,10,5,5" FontSize="10" Click="cbIsSpellMonster_Click"/>
+                <!-- Niveau de lanceur de Sort -->
+                <StackPanel x:Name="stackSpellLevelMonster" Orientation="Horizontal" Grid.Column="1" Visibility="Hidden" >
+                    <Label Content="Niveau :" VerticalAlignment="Center"/>
+                    <ComboBox x:Name="spellLevelMonsterText" SelectionChanged="spellLevelMonsterText_SelectionChanged" >
+                        <ComboBoxItem IsSelected="true">1</ComboBoxItem>
+                        <ComboBoxItem>2</ComboBoxItem>
+                        <ComboBoxItem>3</ComboBoxItem>
+                        <ComboBoxItem>4</ComboBoxItem>
+                        <ComboBoxItem>5</ComboBoxItem>
+                        <ComboBoxItem>6</ComboBoxItem>
+                        <ComboBoxItem>7</ComboBoxItem>
+                        <ComboBoxItem>8</ComboBoxItem>
+                        <ComboBoxItem>9</ComboBoxItem>
+                        <ComboBoxItem>10</ComboBoxItem>
+                        <ComboBoxItem>11</ComboBoxItem>
+                        <ComboBoxItem>12</ComboBoxItem>
+                        <ComboBoxItem>13</ComboBoxItem>
+                        <ComboBoxItem>14</ComboBoxItem>
+                        <ComboBoxItem>15</ComboBoxItem>
+                        <ComboBoxItem>16</ComboBoxItem>
+                        <ComboBoxItem>17</ComboBoxItem>
+                        <ComboBoxItem>18</ComboBoxItem>
+                        <ComboBoxItem>19</ComboBoxItem>
+                        <ComboBoxItem>20</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+                <!-- Catégorie de lanceur de sort -->
+                <StackPanel x:Name="stackSpellCatMonster" Orientation="Horizontal" Grid.Column="2" Visibility="Hidden">
+                    <ComboBox x:Name="spellCatMonsterText" SelectionChanged="spellCatMonsterText_SelectionChanged" >
+                        <ComboBoxItem IsSelected="true">Barde</ComboBoxItem>
+                        <ComboBoxItem>Clerc</ComboBoxItem>
+                        <ComboBoxItem>Druide</ComboBoxItem>
+                        <ComboBoxItem>Ensorceleur</ComboBoxItem>
+                        <ComboBoxItem>Magicien</ComboBoxItem>
+                        <ComboBoxItem>Paladin</ComboBoxItem>
+                        <ComboBoxItem>Rôdeur</ComboBoxItem>
+                        <ComboBoxItem>Sorcier</ComboBoxItem>
+                        <ComboBoxItem>Autre</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+            </Grid>
+            <!-- Liste de sorts -->
+            <Grid Grid.Row="2" x:Name="spellList" Visibility="Hidden">
+                <StackPanel Orientation="Vertical">
+                <!-- Tour de magie -->
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0,5">
+                        <Label Content="Tour de magie :" VerticalAlignment="Center"/>
+                        <ComboBox x:Name="cantricSpell_1" Margin="10, 0">
+                            <ComboBoxItem IsSelected="true">Spell_1</ComboBoxItem>
+                            <ComboBoxItem>Spell_2</ComboBoxItem>
+                            <ComboBoxItem>Spell_3</ComboBoxItem>
+                            <ComboBoxItem>Spell_4</ComboBoxItem>
+                        </ComboBox>
+                        <ComboBox x:Name="cantricSpell_2" Margin="10, 0">
+                            <ComboBoxItem IsSelected="true">Spell_1</ComboBoxItem>
+                            <ComboBoxItem>Spell_2</ComboBoxItem>
+                            <ComboBoxItem>Spell_3</ComboBoxItem>
+                            <ComboBoxItem>Spell_4</ComboBoxItem>
+                        </ComboBox>
+                        <ComboBox x:Name="cantricSpell_3" Margin="10, 0">
+                            <ComboBoxItem IsSelected="true">Spell_1</ComboBoxItem>
+                            <ComboBoxItem>Spell_2</ComboBoxItem>
+                            <ComboBoxItem>Spell_3</ComboBoxItem>
+                            <ComboBoxItem>Spell_4</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <!-- Niveau 1 -->
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0,5">
+                        <Label Content="Niveau 1 :" VerticalAlignment="Center"/>
+                        <ComboBox x:Name="level1Spell_1" Margin="5, 0">
+                            <ComboBoxItem IsSelected="true">Spell_1</ComboBoxItem>
+                            <ComboBoxItem>Spell_2</ComboBoxItem>
+                            <ComboBoxItem>Spell_3</ComboBoxItem>
+                            <ComboBoxItem>Spell_4</ComboBoxItem>
+                        </ComboBox>
+                        <ComboBox x:Name="level1Spell_2" Margin="5, 0">
+                            <ComboBoxItem IsSelected="true">Spell_1</ComboBoxItem>
+                            <ComboBoxItem>Spell_2</ComboBoxItem>
+                            <ComboBoxItem>Spell_3</ComboBoxItem>
+                            <ComboBoxItem>Spell_4</ComboBoxItem>
+                        </ComboBox>
+                        <ComboBox x:Name="level1Spell_3" Margin="5, 0">
+                            <ComboBoxItem IsSelected="true">Spell_1</ComboBoxItem>
+                            <ComboBoxItem>Spell_2</ComboBoxItem>
+                            <ComboBoxItem>Spell_3</ComboBoxItem>
+                            <ComboBoxItem>Spell_4</ComboBoxItem>
+                        </ComboBox>
+                        <ComboBox x:Name="level1Spell_4" Margin="5, 0">
+                            <ComboBoxItem IsSelected="true">Spell_1</ComboBoxItem>
+                            <ComboBoxItem>Spell_2</ComboBoxItem>
+                            <ComboBoxItem>Spell_3</ComboBoxItem>
+                            <ComboBoxItem>Spell_4</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <!-- Niveau 2 -->
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0,5">
+                        <Label Content="Niveau 2 :" VerticalAlignment="Center"/>
+                        <ComboBox x:Name="level2Spell_1" Margin="5, 0">
+                            <ComboBoxItem IsSelected="true">Spell_1</ComboBoxItem>
+                            <ComboBoxItem>Spell_2</ComboBoxItem>
+                            <ComboBoxItem>Spell_3</ComboBoxItem>
+                            <ComboBoxItem>Spell_4</ComboBoxItem>
+                        </ComboBox>
+                        <ComboBox x:Name="level2Spell_2" Margin="5, 0">
+                            <ComboBoxItem IsSelected="true">Spell_1</ComboBoxItem>
+                            <ComboBoxItem>Spell_2</ComboBoxItem>
+                            <ComboBoxItem>Spell_3</ComboBoxItem>
+                            <ComboBoxItem>Spell_4</ComboBoxItem>
+                        </ComboBox>
+                        <ComboBox x:Name="level2Spell_3" Margin="5, 0">
+                            <ComboBoxItem IsSelected="true">Spell_1</ComboBoxItem>
+                            <ComboBoxItem>Spell_2</ComboBoxItem>
+                            <ComboBoxItem>Spell_3</ComboBoxItem>
+                            <ComboBoxItem>Spell_4</ComboBoxItem>
+                        </ComboBox>
+                        <ComboBox x:Name="level2Spell_4" Margin="5, 0">
+                            <ComboBoxItem IsSelected="true">Spell_1</ComboBoxItem>
+                            <ComboBoxItem>Spell_2</ComboBoxItem>
+                            <ComboBoxItem>Spell_3</ComboBoxItem>
+                            <ComboBoxItem>Spell_4</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <!-- Niveau 3 -->
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0,5">
+                        <Label Content="Niveau 3 :" VerticalAlignment="Center"/>
+                        <ComboBox x:Name="level3Spell_1" Margin="5, 0">
+                            <ComboBoxItem IsSelected="true">Spell_1</ComboBoxItem>
+                            <ComboBoxItem>Spell_2</ComboBoxItem>
+                            <ComboBoxItem>Spell_3</ComboBoxItem>
+                            <ComboBoxItem>Spell_4</ComboBoxItem>
+                        </ComboBox>
+                        <ComboBox x:Name="level3Spell_2" Margin="5, 0">
+                            <ComboBoxItem IsSelected="true">Spell_1</ComboBoxItem>
+                            <ComboBoxItem>Spell_2</ComboBoxItem>
+                            <ComboBoxItem>Spell_3</ComboBoxItem>
+                            <ComboBoxItem>Spell_4</ComboBoxItem>
+                        </ComboBox>
+                        <ComboBox x:Name="level3Spell_3" Margin="5, 0">
+                            <ComboBoxItem IsSelected="true">Spell_1</ComboBoxItem>
+                            <ComboBoxItem>Spell_2</ComboBoxItem>
+                            <ComboBoxItem>Spell_3</ComboBoxItem>
+                            <ComboBoxItem>Spell_4</ComboBoxItem>
+                        </ComboBox>
+                        <ComboBox x:Name="level3Spell_4" Margin="5, 0">
+                            <ComboBoxItem IsSelected="true">Spell_1</ComboBoxItem>
+                            <ComboBoxItem>Spell_2</ComboBoxItem>
+                            <ComboBoxItem>Spell_3</ComboBoxItem>
+                            <ComboBoxItem>Spell_4</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <!-- Niveau 4 -->
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0,5">
+                        <Label Content="Niveau 4 :" VerticalAlignment="Center"/>
+                        <ComboBox x:Name="level4Spell_1" Margin="5, 0">
+                            <ComboBoxItem IsSelected="true">Spell_1</ComboBoxItem>
+                            <ComboBoxItem>Spell_2</ComboBoxItem>
+                            <ComboBoxItem>Spell_3</ComboBoxItem>
+                            <ComboBoxItem>Spell_4</ComboBoxItem>
+                        </ComboBox>
+                        <ComboBox x:Name="level4Spell_2" Margin="5, 0">
+                            <ComboBoxItem IsSelected="true">Spell_1</ComboBoxItem>
+                            <ComboBoxItem>Spell_2</ComboBoxItem>
+                            <ComboBoxItem>Spell_3</ComboBoxItem>
+                            <ComboBoxItem>Spell_4</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <!-- Niveau 5 -->
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0,5">
+                        <Label Content="Niveau 5 :" VerticalAlignment="Center"/>
+                        <ComboBox x:Name="level5Spell_1" Margin="5, 0">
+                            <ComboBoxItem IsSelected="true">Spell_1</ComboBoxItem>
+                            <ComboBoxItem>Spell_2</ComboBoxItem>
+                            <ComboBoxItem>Spell_3</ComboBoxItem>
+                            <ComboBoxItem>Spell_4</ComboBoxItem>
+                        </ComboBox>
+                        <ComboBox x:Name="level5Spell_2" Margin="5, 0">
+                            <ComboBoxItem IsSelected="true">Spell_1</ComboBoxItem>
+                            <ComboBoxItem>Spell_2</ComboBoxItem>
+                            <ComboBoxItem>Spell_3</ComboBoxItem>
+                            <ComboBoxItem>Spell_4</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <!-- Niveau 6 -->
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0,5">
+                        <Label Content="Niveau 6 :" VerticalAlignment="Center"/>
+                        <ComboBox x:Name="level6Spell_1" Margin="5, 0">
+                            <ComboBoxItem IsSelected="true">Spell_1</ComboBoxItem>
+                            <ComboBoxItem>Spell_2</ComboBoxItem>
+                            <ComboBoxItem>Spell_3</ComboBoxItem>
+                            <ComboBoxItem>Spell_4</ComboBoxItem>
+                        </ComboBox>
+                        <ComboBox x:Name="level6Spell_2" Margin="5, 0">
+                            <ComboBoxItem IsSelected="true">Spell_1</ComboBoxItem>
+                            <ComboBoxItem>Spell_2</ComboBoxItem>
+                            <ComboBoxItem>Spell_3</ComboBoxItem>
+                            <ComboBoxItem>Spell_4</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <!-- Niveau 7 -->
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0,5">
+                        <Label Content="Niveau 7 :" VerticalAlignment="Center"/>
+                        <ComboBox x:Name="level7Spell_1" Margin="5, 0">
+                            <ComboBoxItem IsSelected="true">Spell_1</ComboBoxItem>
+                            <ComboBoxItem>Spell_2</ComboBoxItem>
+                            <ComboBoxItem>Spell_3</ComboBoxItem>
+                            <ComboBoxItem>Spell_4</ComboBoxItem>
+                        </ComboBox>
+                        <ComboBox x:Name="level7Spell_2" Margin="5, 0">
+                            <ComboBoxItem IsSelected="true">Spell_1</ComboBoxItem>
+                            <ComboBoxItem>Spell_2</ComboBoxItem>
+                            <ComboBoxItem>Spell_3</ComboBoxItem>
+                            <ComboBoxItem>Spell_4</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <!-- Niveau 8 -->
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0,5">
+                        <Label Content="Niveau 8 :" VerticalAlignment="Center"/>
+                        <ComboBox x:Name="level8Spell_1" Margin="5, 0">
+                            <ComboBoxItem IsSelected="true">Spell_1</ComboBoxItem>
+                            <ComboBoxItem>Spell_2</ComboBoxItem>
+                            <ComboBoxItem>Spell_3</ComboBoxItem>
+                            <ComboBoxItem>Spell_4</ComboBoxItem>
+                        </ComboBox>
+                        <ComboBox x:Name="level8Spell_2" Margin="5, 0">
+                            <ComboBoxItem IsSelected="true">Spell_1</ComboBoxItem>
+                            <ComboBoxItem>Spell_2</ComboBoxItem>
+                            <ComboBoxItem>Spell_3</ComboBoxItem>
+                            <ComboBoxItem>Spell_4</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <!-- Niveau 9 -->
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0,5">
+                        <Label Content="Niveau 9 :" VerticalAlignment="Center"/>
+                        <ComboBox x:Name="level9Spell_1" Margin="5, 0">
+                            <ComboBoxItem IsSelected="true">Spell_1</ComboBoxItem>
+                            <ComboBoxItem>Spell_2</ComboBoxItem>
+                            <ComboBoxItem>Spell_3</ComboBoxItem>
+                            <ComboBoxItem>Spell_4</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Grid>
         <!-- Bouton -->
         <Button Grid.Column="2" Grid.Row="2" Content="Ajouter" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="129" Click="AddButtonClick" Margin="0,0,10,10"/>
     </Grid>

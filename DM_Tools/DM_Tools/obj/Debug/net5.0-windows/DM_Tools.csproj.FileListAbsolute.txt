@@ -64,3 +64,5 @@ G:\Développement\DM_Tools\DM_Tools\DM_Tools\obj\Debug\net5.0-windows\DM_Tools.d
 G:\Développement\DM_Tools\DM_Tools\DM_Tools\obj\Debug\net5.0-windows\ref\DM_Tools.dll
 G:\Développement\DM_Tools\DM_Tools\DM_Tools\obj\Debug\net5.0-windows\DM_Tools.pdb
 G:\Développement\DM_Tools\DM_Tools\DM_Tools\obj\Debug\net5.0-windows\DM_Tools.genruntimeconfig.cache
+G:\Développement\DM_Tools\DM_Tools\DM_Tools\obj\Debug\net5.0-windows\TurnOrder.g.cs
+G:\Développement\DM_Tools\DM_Tools\DM_Tools\obj\Debug\net5.0-windows\TurnOrder.baml

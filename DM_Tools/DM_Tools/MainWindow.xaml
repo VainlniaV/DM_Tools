@@ -17,7 +17,8 @@
     <StackPanel>
         <materialDesign:ColorZone Mode="Dark" Padding="16">
             <StackPanel Orientation="Horizontal">
-                <Button Style="{StaticResource MaterialDesignFlatButton}" ToolTip="MaterialDesignFlatButton" Content="BESTIAIRE" Click="Button_Bestiary_Click" Foreground="White"/>
+                <Button Style="{StaticResource MaterialDesignFlatButton}" ToolTip="MaterialDesignFlatButton" Content="BESTIAIRE" Click="Button_Bestiary_Click" Foreground="White" Cursor="Hand"/>
+                <Button Style="{StaticResource MaterialDesignFlatButton}" ToolTip="MaterialDesignFlatButton" Content="TURN ORDER" Click="Button_TurnOrder_Click" Foreground="White" Cursor="Hand"/>
             </StackPanel>
         </materialDesign:ColorZone>
         <Frame x:Name="MainFrame" Height="620" Width="1000"/>

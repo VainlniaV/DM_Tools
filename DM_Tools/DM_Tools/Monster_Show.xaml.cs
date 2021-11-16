@@ -130,7 +130,7 @@ namespace DM_Tools
             if (monster.sauvegardeMonstre.Count != 0)
             {
                 bool multiCaract = false;
-                saveMonsterText.Content = "Jets de sauvegarde";
+                saveMonsterText.Content = "Jets de sauvegarde :";
                 for (var i = 0; i <= 5; i++)
                 {
                     if (monster.sauvegardeMonstre[i])

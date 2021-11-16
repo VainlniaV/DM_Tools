@@ -25,9 +25,12 @@ namespace DM_Tools
         List<Monster> monstres = new List<Monster>();
         string json = File.ReadAllText("monster.json");
 
+        bool charger = false;
+
         public MonsterAdd()
         {
             InitializeComponent();
+            charger = true;
         }
 
         private void AddButtonClick(object sender, RoutedEventArgs e)
@@ -101,7 +104,9 @@ namespace DM_Tools
                                          resMonstre.Text,
                                          immuDmgMonstre.Text,
                                          immuConMonstre.Text,
-                                         sensMonstre.Text
+                                         sensMonstre.Text,
+                                         (bool)cbIsSpellMonster.IsChecked,
+                                         int.Parse(spellLevelMonsterText.Text)
                                         ) ;
             monstres.Add(monstreAdd);
             string jsonAdd = JsonConvert.SerializeObject(monstres);
@@ -220,5 +225,253 @@ namespace DM_Tools
                 sensMonstre.Text = "";
             }
         }
+
+        private void cbIsSpellMonster_Click(object sender, RoutedEventArgs e)
+        {
+            if (cbIsSpellMonster.IsChecked == true)
+            {
+                stackSpellLevelMonster.Visibility = Visibility.Visible;
+                stackSpellCatMonster.Visibility = Visibility.Visible;
+                spellList.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                stackSpellLevelMonster.Visibility = Visibility.Hidden;
+                stackSpellCatMonster.Visibility = Visibility.Hidden;
+                spellList.Visibility = Visibility.Hidden;
+                spellLevelMonsterText.Text = "0";
+            }
+        }
+
+
+        private void spellLevelMonsterText_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (charger)
+            {
+                VisibilitySpell(spellCatMonsterText.Text, int.Parse(spellLevelMonsterText.Text));
+            }
+        }
+
+        private void spellCatMonsterText_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (charger)
+            {
+                VisibilitySpell(spellCatMonsterText.Text, int.Parse(spellLevelMonsterText.Text));
+            }
+        }
+
+        private void VisibilitySpell(string typeSpellCaster, int spellCasterLevel)
+        {
+            string type = GetSpellcasterType(typeSpellCaster);
+            int maxSpellAvailable = GetMaxSpellAvailable(type, spellCasterLevel);
+
+            SetVisibilitySpell(maxSpellAvailable);
+        }
+
+        private string GetSpellcasterType(string spellCasterType)
+        {
+            if (spellCasterType == "Barde" || spellCasterType == "Magicien" || spellCasterType == "Clerc" || spellCasterType == "Druide")
+                return "Full";
+            else if (spellCasterType == "Rodeur" || spellCasterType == "Paladin")
+                return "Half";
+            else
+                return "Low";
+        }
+
+        private int GetMaxSpellAvailable(string typeSpellCaster, int spellCasterLevel)
+        {
+            if (typeSpellCaster == "Full")
+            {
+                if (spellCasterLevel == 1 || spellCasterLevel == 2)
+                    return 1;
+                else if (spellCasterLevel == 3 || spellCasterLevel == 4)
+                    return 2;
+                else if (spellCasterLevel == 5 || spellCasterLevel == 6)
+                    return 3;
+                else if (spellCasterLevel == 7 || spellCasterLevel == 8)
+                    return 4;
+                else if (spellCasterLevel == 9 || spellCasterLevel == 10)
+                    return 5;
+                else if (spellCasterLevel == 11 || spellCasterLevel == 12)
+                    return 6;
+                else if (spellCasterLevel == 13 || spellCasterLevel == 14)
+                    return 7;
+                else if (spellCasterLevel == 15 || spellCasterLevel == 16)
+                    return 8;
+                else
+                    return 9;
+            }
+            else if (typeSpellCaster == "Half")
+            {
+                if (spellCasterLevel == 1)
+                    return 0;
+                else if (spellCasterLevel < 5)
+                    return 1;
+                else if (spellCasterLevel < 9)
+                    return 2;
+                else if (spellCasterLevel < 13)
+                    return 3;
+                else if (spellCasterLevel < 17)
+                    return 4;
+                else
+                    return 5;
+            }
+            else
+            {
+                if (spellCasterLevel < 3)
+                    return 0;
+                else if (spellCasterLevel < 7)
+                    return 1;
+                else if (spellCasterLevel < 13)
+                    return 2;
+                else if (spellCasterLevel < 19)
+                    return 3;
+                else
+                    return 4;
+            }
+        }
+
+        private void SetVisibilitySpell(int maxVisibilitySpellLevel)
+        {
+            bool visible = false;
+            for (int i = 1; i <= 9; i++)
+            {
+                if (i <= maxVisibilitySpellLevel)
+                    visible = true;
+                else
+                    visible = false;
+
+                VisibilitySpellLevel(i, visible);
+            }
+        }
+
+        private void VisibilitySpellLevel(int spellLevel, bool b)
+        {
+            if (spellLevel == 1)
+            {
+                if (b)
+                {
+                    level1Spell_1.Visibility = Visibility.Visible;
+                    level1Spell_2.Visibility = Visibility.Visible;
+                    level1Spell_3.Visibility = Visibility.Visible;
+                    level1Spell_4.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    level1Spell_1.Visibility = Visibility.Hidden;
+                    level1Spell_2.Visibility = Visibility.Hidden;
+                    level1Spell_3.Visibility = Visibility.Hidden;
+                    level1Spell_4.Visibility = Visibility.Hidden;
+                }
+            }
+            else if (spellLevel == 2)
+            {
+                if (b)
+                {
+                    level2Spell_1.Visibility = Visibility.Visible;
+                    level2Spell_2.Visibility = Visibility.Visible;
+                    level2Spell_3.Visibility = Visibility.Visible;
+                    level2Spell_4.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    level2Spell_1.Visibility = Visibility.Hidden;
+                    level2Spell_2.Visibility = Visibility.Hidden;
+                    level2Spell_3.Visibility = Visibility.Hidden;
+                    level2Spell_4.Visibility = Visibility.Hidden;
+                }
+            }
+            if (spellLevel == 3)
+            {
+                if (b)
+                {
+                    level3Spell_1.Visibility = Visibility.Visible;
+                    level3Spell_2.Visibility = Visibility.Visible;
+                    level3Spell_3.Visibility = Visibility.Visible;
+                    level3Spell_4.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    level3Spell_1.Visibility = Visibility.Hidden;
+                    level3Spell_2.Visibility = Visibility.Hidden;
+                    level3Spell_3.Visibility = Visibility.Hidden;
+                    level3Spell_4.Visibility = Visibility.Hidden;
+                }
+            }
+            if (spellLevel == 4)
+            {
+                if (b)
+                {
+                    level4Spell_1.Visibility = Visibility.Visible;
+                    level4Spell_2.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    level4Spell_1.Visibility = Visibility.Hidden;
+                    level4Spell_2.Visibility = Visibility.Hidden;
+                }
+            }
+            if (spellLevel == 5)
+            {
+                if (b)
+                {
+                    level5Spell_1.Visibility = Visibility.Visible;
+                    level5Spell_2.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    level5Spell_1.Visibility = Visibility.Hidden;
+                    level5Spell_2.Visibility = Visibility.Hidden;
+                }
+            }
+            if (spellLevel == 6)
+            {
+                if (b)
+                {
+                    level6Spell_1.Visibility = Visibility.Visible;
+                    level6Spell_2.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    level6Spell_1.Visibility = Visibility.Hidden;
+                    level6Spell_2.Visibility = Visibility.Hidden;
+                }
+            }
+            if (spellLevel == 7)
+            {
+                if (b)
+                {
+                    level7Spell_1.Visibility = Visibility.Visible;
+                    level7Spell_2.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    level7Spell_1.Visibility = Visibility.Hidden;
+                    level7Spell_2.Visibility = Visibility.Hidden;
+                }
+            }
+            if (spellLevel == 8)
+            {
+                if (b)
+                {
+                    level8Spell_1.Visibility = Visibility.Visible;
+                    level8Spell_2.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    level8Spell_1.Visibility = Visibility.Hidden;
+                    level8Spell_2.Visibility = Visibility.Hidden;
+                }
+            }
+            if (spellLevel == 9)
+            {
+                if (b)
+                    level9Spell_1.Visibility = Visibility.Visible;
+                else
+                    level9Spell_1.Visibility = Visibility.Hidden;
+            }
+        }
+
+
     }
 }

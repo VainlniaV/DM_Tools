@@ -16,6 +16,9 @@
     <Compile Update="Monster_Show.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="TurnOrder.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Bestiary_View.xaml">
@@ -28,6 +31,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Monster_Show.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="TurnOrder.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -14,11 +14,11 @@
         <Label x:Name="monsterInfoText" Content="Infos" FontSize="10"/>
         <Separator Background="#922610"/>
         <!-- Armure -->
-        <Label x:Name="acMonsterText" Content="Classe Armure" Foreground="#922610" FontSize="12"/>
+        <Label x:Name="acMonsterText" Content="Classe Armure :" Foreground="#922610" FontSize="12"/>
         <!-- Point de vie -->
-        <Label x:Name="hpMonsterText" Content="Point de vie" Foreground="#922610" FontSize="12"/>
+        <Label x:Name="hpMonsterText" Content="Point de vie :" Foreground="#922610" FontSize="12"/>
         <!-- Vitesse -->
-        <Label x:Name="speedMonsterText" Content="Vitesse" Foreground="#922610" FontSize="12"/>
+        <Label x:Name="speedMonsterText" Content="Vitesse :" Foreground="#922610" FontSize="12"/>
         <Separator Background="#922610"/>
         <!-- Caractéristiques -->
         <Grid>
@@ -55,20 +55,21 @@
         </Grid>
         <Separator Background="#922610"/>
         <!-- Jets de sauvegarde -->
-        <Label x:Name="saveMonsterText" Content="Jets de sauvegarde" Foreground="#922610" FontSize="10"/>
+        <Label x:Name="saveMonsterText" Content="Jets de sauvegarde :" Foreground="#922610" FontSize="10"/>
         <!-- Compétences -->
-        <Label x:Name="compMonsterText" Content="Compétence" Foreground="#922610" FontSize="10"/>
+        <Label x:Name="compMonsterText" Content="Compétence :" Foreground="#922610" FontSize="10"/>
         <!-- Vulnérabilités -->
-        <Label x:Name="vulnMonsterText" Content="Vulnérabilités aux dégâts" Foreground="#922610" FontSize="10"/>
+        <Label x:Name="vulnMonsterText" Content="Vulnérabilités aux dégâts :" Foreground="#922610" FontSize="10"/>
         <!-- Résistances -->
-        <Label x:Name="resMonsterText" Content="Résistances aux dégâts" Foreground="#922610" FontSize="10"/>
+        <Label x:Name="resMonsterText" Content="Résistances aux dégâts :" Foreground="#922610" FontSize="10"/>
         <!-- Immunités aux dégâts -->
-        <Label x:Name="immuDmgMonsterText" Content="Immunités aux dégâts" Foreground="#922610" FontSize="10"/>
+        <Label x:Name="immuDmgMonsterText" Content="Immunités aux dégâts :" Foreground="#922610" FontSize="10"/>
         <!-- Immunités aux conditions -->
-        <Label x:Name="immuConMonsterText" Content="Immunités aux conditions" Foreground="#922610" FontSize="10"/>
+        <Label x:Name="immuConMonsterText" Content="Immunités aux conditions :" Foreground="#922610" FontSize="10"/>
         <!-- Sens -->
-        <Label x:Name="sensMonsterText" Content="Sens" Foreground="#922610" FontSize="10"/>
+        <Label x:Name="sensMonsterText" Content="Sens :" Foreground="#922610" FontSize="10"/>
         <!-- Langue -->
-        <Label x:Name="speekMonsterText" Content="Langues" Foreground="#922610" FontSize="10"/>
+        <Label x:Name="speekMonsterText" Content="Langues :" Foreground="#922610" FontSize="10"/>
+        <Separator Background="#922610"/>
     </StackPanel>
 </Window>
